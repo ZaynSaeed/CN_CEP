@@ -27,4 +27,4 @@ This project monitors temperature and humidity for a cold storage facility. It u
     * `python fake_http.py` (For Database Logging)
 
 4.  **Open Dashboard:**
-    Go to http://localhost:5000
+    Go to http://127.0.0.1:5000/
