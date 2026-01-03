@@ -1,30 +1,45 @@
-# ❄️ Smart Cold Storage Monitoring System (CEP)
+# ❄️ Smart Cold Storage Monitoring System
 
-## Project Overview
-This project monitors temperature and humidity for a cold storage facility. It uses **MQTT** for real-time alerts and **HTTP** for reliable database logging.
+## 🛠️ Prerequisites (Required Software)
+Before running the project, you must install the following:
 
-## Technologies Used
-* **Hardware:** ESP32 / ESP8266 (Simulated via Python)
-* **Backend:** Python Flask
-* **Database:** SQLite
-* **Protocols:** MQTT (Live Stream) & HTTP (Periodic Log)
-* **Frontend:** HTML5, CSS3, Chart.js
+1.  **Python 3.x**
+2.  **Mosquitto MQTT Broker** (The system will not work without this!)
 
-## How to Run
+### How to Install Mosquitto:
+* **Windows:** Download and install from [mosquitto.org](https://mosquitto.org/download/). After installing, open a Command Prompt and type `net start mosquitto` to ensure it is running.
+* **Linux (Ubuntu/Debian):** Run `sudo apt install mosquitto mosquitto-clients` and then `sudo systemctl start mosquitto`.
+* **Mac:** Run `brew install mosquitto` and then `brew services start mosquitto`.
 
-1.  **Install Dependencies:**
+---
+
+## 🚀 How to Run the Project
+
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/ZaynSaeed/CN_CEP.git](https://github.com/ZaynSaeed/CN_CEP.git)
+    cd CN_CEP
+    ```
+
+2.  **Install Python Libraries:**
     ```bash
     pip install flask flask-cors paho-mqtt
     ```
 
-2.  **Start the Server:**
-    ```bash
-    python server.py
-    ```
+3.  **Run the System (You need 3 Terminals):**
 
-3.  **Run Simulation (in separate terminals):**
-    * `python fake_mqtt.py` (For Live Data)
-    * `python fake_http.py` (For Database Logging)
+    * **Terminal 1 (The Server):**
+        ```bash
+        python server.py
+        ```
+    * **Terminal 2 (Database Logger):**
+        ```bash
+        python fake_http.py
+        ```
+    * **Terminal 3 (Live Stream):**
+        ```bash
+        python fake_mqtt.py
+        ```
 
-4.  **Open Dashboard:**
-    Go to http://127.0.0.1:5000/
+4.  **View Dashboard:**
+    Open your browser and go to: `http://localhost:5000`
